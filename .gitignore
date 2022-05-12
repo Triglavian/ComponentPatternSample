@@ -33,3 +33,8 @@
 
 # Directory
 x64/
+
+# etc
+*.filters
+*.vcxproj
+*.user
