@@ -8,5 +8,7 @@ public:
 	~Attacking();
 	void set_dmg(const int);
 	void attack(int&);
+	template <class T>
+	void attack();
 };
 

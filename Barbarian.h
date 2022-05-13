@@ -3,6 +3,8 @@
 #include "Interval.h"
 #include "AttackRangeValidation.h"
 #include "Attacking.h"
+#include "MovementValidation.h"
+#include "Movement.h"
 
 class Barbarian
 {
@@ -14,9 +16,13 @@ private:
 	//Position m_pos;
 	int m_x;
 	int m_y;
+	int m_modif_x;
+	int m_modif_y;
 	Interval m_interval;
 	AttackRangeValidation m_atk_valid;
 	Attacking m_atk;
+	Movement m_movement;
+	MovementValidation m_mov_valid;
 public:	
 	Barbarian();
 	Barbarian(int, int);
@@ -28,4 +34,5 @@ public:
 	//template <class T>
 	//void attack(T);
 	void attack(const int, const int, int&);
+	void move(const int);
 };

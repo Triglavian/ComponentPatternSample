@@ -45,6 +45,24 @@ int& Barbarian::get_y() {
 	return m_y;
 }
 
+void Barbarian::attack(const int p_target_x, const int p_target_y, int& p_target_hp) {
+	if (m_atk_valid.is_in_range(m_x, m_y, p_target_x, p_target_y) == false) {
+		m_interval.validate_attack_interval(false);	//reset attack interval
+		return;
+	}
+	if (m_interval.validate_attack_interval(true) == false) return;	//if not enough interval 
+	m_atk.attack(p_target_hp);
+}
+
+void Barbarian::move(const int p_direction) {
+	m_mov_valid.temp_move(m_x, m_y, p_direction);
+	if (m_mov_valid.validate_movable(m_modif_x, m_modif_y) == false) {
+		m_movement.CancelMove(m_x, m_y, m_modif_x, m_modif_y);
+		return;
+	}
+	m_movement.Move(m_x, m_y, m_modif_x, m_modif_y);
+}
+
 //Position& Barbarian::get_pos() {
 //	return m_pos.get_pos();
 //}
@@ -58,12 +76,4 @@ int& Barbarian::get_y() {
 //	if (m_interval.validate_attack_interval(true) == false) return;	//if not enough interval 
 //	m_atk.attack(p_target.get_hp());
 //}
-
-void Barbarian::attack(const int p_target_x, const int p_target_y, int& p_target_hp) {
-	if (m_atk_valid.is_in_range(m_x, m_y, p_target_x, p_target_y) == false) {
-		m_interval.validate_attack_interval(false);	//reset attack interval
-		return;
-	}
-	if (m_interval.validate_attack_interval(true) == false) return;	//if not enough interval 
-	m_atk.attack(p_target_hp);
-}
+ 

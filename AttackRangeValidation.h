@@ -8,5 +8,5 @@ public:
 	AttackRangeValidation();
 	~AttackRangeValidation();
 	void set_range(const int);
-	bool is_in_range(int, int, int ,int);
+	bool is_in_range(int, int, int, int);
 };
