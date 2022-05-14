@@ -8,8 +8,8 @@ private:
 	clock_t m_current_tick;
 public:
 	Tick();
+	Tick(const int);
 	~Tick();
-	void set_tick(const int);
 	bool is_tick();
 };
 

@@ -6,7 +6,7 @@ private:
 	int m_range;
 public:
 	AttackRangeValidation();
+	AttackRangeValidation(const int);
 	~AttackRangeValidation();
-	void set_range(const int);
 	bool is_in_range(int, int, int, int);
 };

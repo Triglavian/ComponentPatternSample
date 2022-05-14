@@ -6,11 +6,13 @@ Tick::Tick() {
 	m_current_tick = 0;
 }
 
-Tick::~Tick() { }
-
-void Tick::set_tick(const int p_tick) {
+Tick::Tick(const int p_tick) {
 	m_tick = p_tick;
+	m_start_tick = 0;
+	m_current_tick = 0;
 }
+
+Tick::~Tick() { }
 
 bool Tick::is_tick() {
 	if (m_start_tick == m_current_tick) m_start_tick = clock();	//set new start tick if previous tick is over

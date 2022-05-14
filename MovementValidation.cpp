@@ -5,6 +5,7 @@ MovementValidation::MovementValidation() {
 	fp_temp_move[1] = &MovementValidation::temp_down;
 	fp_temp_move[2] = &MovementValidation::temp_left;
 	fp_temp_move[3] = &MovementValidation::temp_right;
+	//m_movable = true;
 }
 
 MovementValidation::~MovementValidation() { }
@@ -33,3 +34,11 @@ bool MovementValidation::validate_movable(int& p_x, int& p_y) {
 	if (p_x < 1 || p_x > 40 || p_y < 1 || p_y > 30) return false;	//field size = 30 * 30
 	return true;
 }
+
+//void MovementValidation::set_movable(const bool p_movable) {
+//	m_movable = p_movable;
+//}
+//
+//bool MovementValidation::get_movable() {
+//	return m_movable;
+//}

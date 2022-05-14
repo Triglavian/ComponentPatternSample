@@ -5,10 +5,10 @@ private:
 	int m_dmg;
 public:
 	Attacking();			
-	~Attacking();
-	void set_dmg(const int);
+	Attacking(const int);
+	~Attacking(); 
 	void attack(int&);
-	template <class T>
-	void attack();
+	//template <class T>
+	//void attack();
 };
 

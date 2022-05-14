@@ -3,6 +3,7 @@
 
 class MovementValidation {
 private:
+	//bool m_movable;
 	void(MovementValidation::*fp_temp_move[(int)Direction::MAX])(int&, int&);
 public:
 	MovementValidation();
@@ -13,4 +14,6 @@ public:
 	void temp_left(int&, int&);
 	void temp_right(int&, int&);
 	bool validate_movable(int&, int&);
+	//void set_movable(const bool);
+	//bool get_movable();
 };
